@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket Client</title>
+</head>
+<body>
+
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+<script>
+
+const socket = io("http://localhost:3000");
+
+const user_id = "PASTE_USER_ID";
+
+socket.emit("join_user_room", user_id);
+
+socket.on("fraud_alert", (data) => {
+
+    console.log("Fraud Alert Received");
+
+    console.log(data);
+});
+
+</script>
+
+</body>
+</html>
